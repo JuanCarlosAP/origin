@@ -1,8 +1,4 @@
 package com.spring.crud.model;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.*;
 
 @Entity
@@ -35,11 +31,6 @@ public class Location {
 	private Country countries;
 
 	
-	
-	
-	
-
-
 
 	public Country getCountries() {
 		return countries;
@@ -130,10 +121,4 @@ public class Location {
 				+ ", countries=" + countries + "]";
 	}
 
-	
-	
-
-	
-	
-	
 }

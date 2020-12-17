@@ -1,11 +1,7 @@
 package com.spring.crud.services;
 
 import java.util.List;
-
-import org.springframework.http.ResponseEntity;
 import com.spring.crud.model.Employee;
-
-
 
 
 public interface EmployeesServices {

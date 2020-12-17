@@ -5,10 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import com.spring.crud.model.Country;
 import com.spring.crud.model.Employee;
-import com.spring.crud.services.CountriesServices;
 import com.spring.crud.services.EmployeesServices;
 
 @Controller

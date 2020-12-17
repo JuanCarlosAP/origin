@@ -1,7 +1,6 @@
 package com.spring.crud.services;
 
 import java.util.List;
-import com.spring.crud.model.Job;
 import com.spring.crud.model.JobHistoryEntity;
 import com.spring.crud.model.PKJobHistory;
 

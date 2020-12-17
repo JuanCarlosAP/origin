@@ -1,11 +1,5 @@
 package com.spring.crud.model;
-
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.Date;
-
 import javax.persistence.*;
 
 
@@ -161,7 +155,6 @@ public class Employee {
 	public void setDepartmentId(Integer departmentId) {
 		this.departmentId = departmentId;
 	}
-
 
 
 	@Override

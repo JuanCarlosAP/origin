@@ -2,9 +2,7 @@ package com.spring.crud.model;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.persistence.*;
-import com.sun.istack.NotNull;
 
 
 @Entity
@@ -23,22 +21,6 @@ public class Region {
 	private List<Country> countries = new ArrayList<>();
 
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	public Integer getRegionId() {
 		return regionId;
@@ -89,15 +71,4 @@ public class Region {
 	}
 
 
-	
-
-
-	
-
-
-	
-	
-	
-	
-	
 }
