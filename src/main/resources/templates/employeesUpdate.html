@@ -1,0 +1,50 @@
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> 
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert</title>
+	</head>
+	<body>
+		<a th:href="@{/employees}">Regresar</a>
+		<br/>
+		<form th:action="@{/employees/insert}" method="POST" th:object ="${employee}">
+			
+			<br/>
+			
+			<input type = "hidden" th:name = "employeeId" th:field="*{employeeId}" >
+			<br/>
+			<label for="firstName">First Name: </label>
+			<input type = "text" th:name = "firstName" th:field="*{firstName}"  >
+			<br/>
+			<label for="lastName">Last Name : </label>
+			<input type = "text" th:name = "lastName" th:field="*{lastName}" >
+			<br/>
+			<label for="email">Email :</label>
+			<input type = "text" th:name = "email" th:field="*{email}" >
+			<br/>
+			<label for="phoneNumber">phone Number: </label>
+			<input type = "tel" th:name = "phoneNumber" th:field="*{phoneNumber}"  >
+			<br/>
+			<label for="hireDate">hire Date: </label>
+			<input type = "text" th:name = "hireDate"  th:field="*{hireDate}" >
+			<br/>
+				<label for="jobId">job Id: </label>
+			<input type = "text" th:name = "jobId" th:field="*{jobId}"  >
+			<br/>
+			<label for="salary">salary: </label>
+			<input type = "text" th:name = "salary" th:field="*{salary}" >
+			<br/>
+			<label for="commisionPct">commisionPct :</label>
+			<input type = "number" th:name = "commisionPct" th:field="*{commisionPct}" >
+			<br/>
+			<label for="managerId">manager Id: </label>
+			<input type = "number" th:name = "managerId" th:field="*{managerId}" >
+			<br/>
+			<label for="departmentId">departmentId :</label>
+			<input type = "number" th:name = "departmentId" th:field="*{departmentId}" >
+			<br/>
+			
+			<input type="submit" name="guardar" value="guardar" />
+		</form>
+	</body>  
+</html>

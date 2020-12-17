@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Regions</title>
+</head>
+<body>
+	<br />
+	<a th:href="@{/}">Inicio</a>
+	<br />
+	<br />
+	<a th:href="@{/regions_countries}">Regions join Countries </a>
+	<br />
+	<br />
+	<a th:href="@{/regions/agregar}">Insertar nuevo registro </a>
+	<br />
+	<br />
+	<div th:if="${regions != null and !regions.empty}">
+		<table>
+			<tr>
+				<th>Region_id</th>
+				<th>Region_name</th>
+				<th>Editar</th>
+				<th>Eliminar</th>
+			<tr th:each="region: ${regions}">
+				<td th:text="${region.regionId}"></td>
+				<td th:text="${region.regionName}"></td>
+				<td><a th:href="@{/regions/editar/} + ${region.regionId}"
+					th:text="Editar" /></td>
+				<td><a th:href="@{/regions/eliminar/} + ${region.regionId}"
+					th:text="Eliminar" /></td>
+			</tr>
+		</table>
+	</div>
+	<div th:if="${regions == null or regions.empty}">La lista esta
+		vacia...</div>
+</body>
+</html>

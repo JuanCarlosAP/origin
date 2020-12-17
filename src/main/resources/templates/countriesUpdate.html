@@ -1,0 +1,25 @@
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> 
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert</title>
+	</head>
+	<body>
+		<a th:href="@{/countries}">Regresar</a>
+		<br/>
+		<form th:action="@{/countries/insert}" method="POST" th:object ="${country}">
+			
+			<br/>
+			<label for="countryID">Country Id:</label>
+			<input type = "text" th:name = "countryID" th:field="*{countryID}" >
+			<br/>
+			<label for="countryName">Country Name: </label>
+			<input type = "text" th:name = "countryName" th:field="*{countryName}"  >
+			<br/>
+			<label for="regionId">Region id: </label>
+			<input type = "number" th:name = "regionId" th:field="*{regiones.regionId}" >
+			<br/>
+			<input type="submit" name="guardar" value="guardar" />
+		</form>
+	</body>  
+</html>

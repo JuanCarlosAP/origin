@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Jobs History</title>
+</head>
+<body>
+<br/>
+	<a th:href = "@{/}">Inicio</a>
+	<br/><br/>
+	<a th:href = "@{/jobshistories/agregar}">Insertar nuevo registro </a>
+	<br/>
+	<br/>
+	<div th:if="${jobHistory != null and !jobHistory.empty}">
+		<table>
+			<tr>
+				<th>Employee id</th>
+				<th>Start Date</th>
+				<th>End Date</th>
+				<th>Job id</th>
+				<th>Department id</th>
+				<th>Editar</th>
+				<th>Eliminar</th>
+			<tr th:each="item : ${jobHistory}">
+				<td th:text="${item.miPK.employeeId}"></td>
+				<td th:text="${item.miPK.startDate}"></td>
+				<td th:text="${item.endDate}"></td>
+				<td th:text="${item.jobId}"></td>
+				<td th:text="${item.departmentId}"></td>
+				<td> <a th:href = "@{/jobshistories/editar/} + ${item.miPK.employeeId}  + @{/}+  ${item.miPK.startDate}" th:text="Editar" />  </td>
+				<td> <a th:href = "@{/jobshistories/eliminar/} + ${item.miPK.employeeId}  +@{/}+  ${item.miPK.startDate}" th:text="Eliminar" />  </td>
+				
+			</tr>
+		</table>
+	</div>
+	<div th:if="${jobHistory == null or jobHistory.empty}">La lista esta
+			vacia...</div>
+</body>
+</html>

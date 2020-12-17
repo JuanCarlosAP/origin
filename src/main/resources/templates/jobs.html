@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Jobs</title>
+</head>
+<body>
+<br/>
+	<a th:href = "@{/}">Inicio</a>
+	<br/><br/>
+	<a th:href = "@{/jobs/agregar}">Insertar nuevo registro </a>
+	<br/>
+	<br/>
+	<div th:if="${job != null and !job.empty}">
+		<table>
+			<tr>
+				<th>Job id</th>
+				<th>Job Title</th>
+				<th>Min Salary</th>
+				<th>Max Salary</th>
+				<th>Editar</th>
+				<th>Eliminar</th>
+			<tr th:each="item : ${job}">
+				<td th:text="${item.jobId}"></td>
+				<td th:text="${item.jobTitle}"></td>
+				<td th:text="${item.minSalary}"></td>
+				<td th:text="${item.maxSalary}"></td>
+				<td> <a th:href = "@{/jobs/editar/} + ${item.jobId}" th:text="Editar" />  </td>
+				<td> <a th:href = "@{/jobs/eliminar/} + ${item.jobId}" th:text="Eliminar" />  </td>
+			</tr>
+		</table>
+	</div>
+	<div th:if="${job == null or job.empty}">La lista esta
+			vacia...</div>
+</body>
+</html>

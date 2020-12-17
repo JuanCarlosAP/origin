@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Regions Join Countries</title>
+</head>
+<body>
+	<a th:href="@{/regions}">Regresar</a>
+	<div th:if="${region != null and !region.empty}">
+		<table>
+			<tr>	
+			<tr th:each="item : ${region}">
+				<p></p><strong>Region </strong>
+				<td th:text="${item.regionName}">Mostrar Region name</td>	
+				<td th:text="${item.regionId}">Mostrar Region name</td>	
+				
+				<table>
+					<tr>		
+					<tr th:each=" i : ${item.countries}">
+						<td th:text="${i.countryName}">mostrar Country name</td>
+					</tr>	
+				</table>
+			</tr>
+		</table>
+	</div>
+	<div th:if="${region == null or region.empty}">La lista esta
+		vacia...
+	</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Locations</title>
+</head>
+<body>
+	<br/>
+	<a th:href = "@{/}">Inicio</a>
+	<br/><br/>
+	<a th:href = "@{/locations/agregar}">Insertar nuevo registro </a>
+	<br/>
+	<br/>
+	<div th:if="${location != null and !location.empty}">
+		<table>
+			<tr>
+				<th>Location id</th>
+				<th>Street address</th>
+				<th>Postal Code</th>
+				<th>City</th>
+				<th>State province</th>
+				<th>Country Id</th>
+				<th>Editar</th>
+				<th>Eliminar</th>
+			<tr th:each="item : ${location}">
+				<td th:text="${item.locationId}">mostrar location id</td>
+				<td th:text="${item.streetAddres}">mostrar street address</td>
+				<td th:text="${item.postalCode}">mostrar postal code </td>
+				<td th:text="${item.city}">mostrar city</td>
+				<td th:text="${item.stateProvince}">mostrar state province</td>
+				<td th:text="${item.countryId}">mostrar Id country</td>
+				<td> <a th:href = "@{/locations/editar/} + ${item.locationId}" th:text="Editar" />  </td>
+				<td> <a th:href = "@{/locations/eliminar/} + ${item.locationId}" th:text="Eliminar" />  </td>
+			</tr>
+		</table>
+	</div>
+	<div th:if="${location == null or location.empty}">La lista esta
+			vacia...</div>
+</body>
+</html>

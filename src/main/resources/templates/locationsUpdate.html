@@ -1,0 +1,30 @@
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> 
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert</title>
+	</head>
+	<body>
+		<a th:href="@{/locations}">Regresar</a>
+		<br/>
+		<form th:action="@{/locations/insert}" method="POST" th:object ="${location}">
+			<input type="hidden" th:name="locationId" th:field="*{locationId}">
+			<label for="streetAddres">Street Address: </label>
+			<input type = "text" th:name = "streetAddres" th:field="*{streetAddres}"  >
+			<br/>
+			<label for="postalCode">Postal Code: </label>
+			<input type = "text" th:name = "postalCode" th:field="*{postalCode}"  >
+			<br/>
+			<label for="city">City: </label>
+			<input type = "text" th:name = "city" th:field="*{city}"  >
+			<br/>
+			<label for="stateProvince">State Province: </label>
+			<input type = "text" th:name = "stateProvince" th:field="*{stateProvince}"  >
+			<br/>
+			<label for="countryID">Country Id: </label>
+			<input type = "text" th:name = "countryID" th:field="*{countryId}"  >
+			<br/>
+			<input type="submit" name="guardar" value="guardar" />
+		</form>
+	</body>  
+</html>

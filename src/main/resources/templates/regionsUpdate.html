@@ -1,0 +1,22 @@
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> 
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert</title>
+	</head>
+	<body>
+		<a th:href="@{/regions}">Regresar</a>
+		<br/>
+		<form th:action="@{/regions/insert}" method="POST" th:object ="${region}">
+			
+			<br/>
+			<label for="regionId">Region Id:</label>
+			<input type = "number" th:name = "regionId" th:field="*{regionId}" >
+			<br/>
+			<label for="regionName">Region Name: </label>
+			<input type = "text" th:name = "regionName" th:field="*{regionName}"  >
+			<br/>
+			<input type="submit" name="guardar" value="guardar" />
+		</form>
+	</body>  
+</html>

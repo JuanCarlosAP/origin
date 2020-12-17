@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Countries</title>
+</head>
+<body>
+	<br/>
+	<a th:href = "@{/}">Inicio</a>
+	<br/><br/>
+	<a th:href = "@{/countries_regions}">Countries join Regions </a>
+	<br/>
+	<a th:href = "@{/countries/agregar}">Insertar nuevo registro </a>
+	<br/>
+	<br/>
+	<div th:if="${country != null and !country.empty}">
+		<table>
+			<tr>
+				<th>Country id</th>
+				<th>Country name</th>
+				<th>Region Id</th>
+				<th>Editar</th>
+				<th>Eliminar</th>
+			<tr th:each="item : ${country}">
+				<td th:text="${item.countryID}">mostrar region name</td>
+				<td th:text="${item.countryName}">mostrar region name</td>
+				<td th:text="${item.regiones.regionId}">mostrar region id</td>
+				<td> <a th:href = "@{/countries/editar/} + ${item.countryID}" th:text="Editar" />  </td>
+				<td> <a th:href = "@{/countries/eliminar/} + ${item.countryID}" th:text="Eliminar" />  </td>
+			</tr>
+		</table>
+	</div>
+	<div th:if="${country == null or country.empty}">La lista esta
+			vacia...</div>
+</body>
+</html>

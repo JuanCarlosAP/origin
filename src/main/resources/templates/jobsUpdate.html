@@ -1,0 +1,28 @@
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> 
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert</title>
+	</head>
+	<body>
+		<a th:href="@{/jobs}">Regresar</a>
+		<br/>
+		<form th:action="@{/jobs/insert}" method="POST" th:object ="${job}">
+			
+			<br/>
+			<label for="jobId">job Id :</label>
+			<input type = "text" th:name = "jobId" th:field="*{jobId}" >
+			<br/>
+			<label for="jobTitle">jobTitle: </label>
+			<input type = "text" th:name = "jobTitle" th:field="*{jobTitle}"  >
+			<br/>
+			<label for="minSalary">Min Salary </label>
+			<input type = "number" th:name = "minSalary" th:field="*{minSalary}" >
+			<br/>
+			<label for="maxSalary">Max Salary </label>
+			<input type = "number" th:name = "maxSalary" th:field="*{maxSalary}" >
+			<br/>
+			<input type="submit" name="guardar" value="guardar" />
+		</form>
+	</body>  
+</html>

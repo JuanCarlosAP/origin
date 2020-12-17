@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Regions</title>
+</head>
+<body>
+	<br/>
+	<a th:href = "@{/}">Inicio</a>
+	<br/><br/>
+	<a th:href = "@{/departments/agregar}">Insertar nuevo registro </a>
+	<br/>
+	<br/>
+	<div th:if="${department != null and !department.empty}">
+		<table>
+			<tr>
+				<th>Department id</th>
+				<th>Department name</th>
+				<th>Manager Id</th>
+				<th>Location Id</th>
+				<th>Editar</th>
+				<th>Eliminar</th>
+			<tr th:each="item : ${department}">
+				<td th:text="${item.departmentId}"></td>
+				<td th:text="${item.departmentName}"></td>
+				<td th:text="${item.managerId}"></td>
+				<td th:text="${item.locationId}"></td>
+				<td> <a th:href = "@{/departments/editar/} + ${item.departmentId}" th:text="Editar" />  </td>
+				<td> <a th:href = "@{/departments/eliminar/} + ${item.departmentId}" th:text="Eliminar" />  </td>
+			</tr>
+		</table>
+	</div>
+	<div th:if="${department == null or department.empty}">La lista esta
+			vacia...</div>
+</body>
+</html>
